@@ -1,0 +1,48 @@
+{
+  "carrental": [
+    {
+      "name": "shiv",
+      "age": 23,
+      "aadhhar": 123456,
+      "mobile": 1234567,
+      "date": "01-11-25",
+      "destination": "pune",
+      "person": 4,
+      "price": 500,
+      "id": "425a"
+    },
+    {
+      "name": "vani",
+      "age": 24,
+      "aadhhar": 123456,
+      "mobile": 1234567,
+      "date": "01-11-25",
+      "destination": "bhopal",
+      "person": 5,
+      "price": 500,
+      "id": "c216"
+    },
+    {
+      "id": "4d01",
+      "name": "ram",
+      "age": "23",
+      "aadhhar": "654321789076",
+      "mobile": "9876543212",
+      "date": "2025-03-06",
+      "destination": "pune",
+      "person": "2",
+      "price": 500
+    },
+    {
+      "id": "5557",
+      "name": "shivani",
+      "age": "22",
+      "aadhhar": "654321789076",
+      "mobile": "654321789",
+      "date": "2025-03-05",
+      "destination": "delhi",
+      "person": "3",
+      "price": 500
+    }
+  ]
+}
