@@ -84,7 +84,22 @@ let formfill= async(id)=>{
 
     let formdata=`
 
-        Enter name: <input type="text" id="upname" value="${data.name}">
+        Enter name: <input type="text" id="upname" value="${data.name}"><br><br>
+         Enter age: <input type="number" id="upage" value="${data.age}"><br><br>
+        Enter number: <input type="number" id="upmobile" value="${data.mobile}"><br><br>
+        Enter aadhar: <input type="aadhar" id="upaadhhar" value="${data.aadhhar}"><br><br>
+        Enter date: <input type="date" id="update" value="${data.date}"><br><br>
+        Enter destination: <select  id="updestination">
+            <option value="bhopal">Bhopal</option>
+            <option value="indore">Indore</option>
+            <option value="pune">Pune</option>
+            <option value="delhi">Delhi</option>
+            <option value="betul">Betul</option>
+        </select><br><br>
+        Enter person: <input type="number" id="upperson" value="${data.person}"><br><br>
+        
+
+        <input type="submit" onclick="return ins()" id="ret">
         
 
         
