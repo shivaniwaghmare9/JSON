@@ -26,6 +26,7 @@ data.map((e)=>{
    <td id="age">${e.price}</td>
    <td id="city">${e.price*e.person}</td>
    <td onclick="del('${e.id}')">Cancel</td>
+    <td onclick="formfill('${e.id}')">Update</td>
    </tr>
 
    `
@@ -69,6 +70,26 @@ let ins=()=>{
             }
         )
     })
+
+    location.href="crud.html"
     return false
     
+}
+
+let formfill= async(id)=>{
+    let url=`http://localhost:3000/carrental/${id}`
+    let res= await fetch(url,{method:"GET"})
+    let data=await res.json()
+    console.log(data);                     //show data
+
+    let formdata=`
+
+        Enter name: <input type="text" id="upname" value="${data.name}">
+        
+
+        
+    `
+    document.querySelector("#formdata").innerHTML=formdata
+
+
 }
