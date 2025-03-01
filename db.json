@@ -34,15 +34,15 @@
       "price": 500
     },
     {
-      "id": "5a16",
-      "name": "vani",
+      "name": "vani m",
       "age": "20",
       "aadhhar": "654321789076",
       "mobile": "12345677890",
       "date": "2025-03-03",
-      "destination": "delhi",
+      "destination": "bhopal",
       "person": "2",
-      "price": 500
+      "price": 500,
+      "id": "5a16"
     },
     {
       "id": "b7f9",
@@ -52,6 +52,17 @@
       "mobile": "123456789",
       "date": "2025-03-05",
       "destination": "pune",
+      "person": "3",
+      "price": 500
+    },
+    {
+      "id": "c68d",
+      "name": "rani",
+      "age": "21",
+      "aadhhar": "123456789098",
+      "mobile": "123456",
+      "date": "2025-03-09",
+      "destination": "indore",
       "person": "3",
       "price": 500
     }

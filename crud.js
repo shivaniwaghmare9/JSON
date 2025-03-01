@@ -25,12 +25,32 @@ data.map((e)=>{
    <td id="name">${e.person}</td>
    <td id="age">${e.price}</td>
    <td id="city">${e.price*e.person}</td>
-   <td onclick="del('${e.id}')">Cancel</td>
+   <td onclick="confirmdeletee('${e.id}')">Cancel</td>
     <td onclick="formfill('${e.id}')">Update</td>
    </tr>
 
    `
 })
+}
+let confirmdeletee=(id)=>{
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            del(id)
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+        }
+      });
 }
 let del=(id)=>{
     let url=`http://localhost:3000/carrental/${id}`;
@@ -99,7 +119,7 @@ let formfill= async(id)=>{
         Enter person: <input type="number" id="upperson" value="${data.person}"><br><br>
         
 
-        <input type="submit" onclick="return ins()" id="ret">
+        <input type="submit" value="Update" onclick="return finalupdate('${data.id}')" id="ret">
         
 
         
@@ -108,3 +128,42 @@ let formfill= async(id)=>{
 
 
 }
+
+let finalupdate=(id)=>{
+    let inpname=document.querySelector("#upname").value
+    let inpage=document.querySelector("#upage").value
+    let inpmobile=document.querySelector("#upmobile").value
+    let inpaadhar=document.querySelector("#upaadhhar").value
+    let inpdate=document.querySelector("#update").value
+    let inpdesti=document.querySelector("#updestination").value
+    let inpperson=document.querySelector("#upperson").value
+
+    let url=`http://localhost:3000/carrental/${id}`
+
+    fetch(url,{
+
+        method:"PUT" ,
+
+        headers:{
+            "Content-type":"application/json"
+        },
+
+        body:JSON.stringify(
+            
+                {
+                    "name":inpname,
+                    "age":inpage,
+                    "aadhhar":inpaadhar,
+                    "mobile":inpmobile,
+                    "date":inpdate,
+                    "destination":inpdesti,
+                    "person":inpperson,
+                    "price":500
+                }
+            )
+        })
+    
+       
+        return false
+        
+    }
