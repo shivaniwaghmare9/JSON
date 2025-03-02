@@ -28,8 +28,7 @@ data.map((e)=>{
    <td onclick="confirmdeletee('${e.id}')">Cancel</td>
     <td onclick="formfill('${e.id}')">Update</td>
    </tr>
-
-   `
+`
 })
 }
 let confirmdeletee=(id)=>{
@@ -117,16 +116,10 @@ let formfill= async(id)=>{
             <option value="betul">Betul</option>
         </select><br><br>
         Enter person: <input type="number" id="upperson" value="${data.person}"><br><br>
-        
 
-        <input type="submit" value="Update" onclick="return finalupdate('${data.id}')" id="ret">
-        
-
-        
+       <input type="submit" value="Update" onclick="return finalupdate('${data.id}')" id="ret">
     `
     document.querySelector("#formdata").innerHTML=formdata
-
-
 }
 
 let finalupdate=(id)=>{
