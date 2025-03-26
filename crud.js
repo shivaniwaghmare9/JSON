@@ -6,11 +6,42 @@ let fetchData= async ()=>{
     // let data=await res.json()
    // console.log(res);                  //response
     let data=await res.json()
-    console.log(data);                     //show data
+    console.log(data);  
+    pagination(data)                //show data
 
+}
+let searchh= async()=>{
+    let searchinp=document.querySelector("#searchinp").value.toLowerCase()
+    let url='http://localhost:3000/carrental'
+    let res= await fetch(url,{method:"GET"})
+                  
+    let data=await res.json()
+    let filterData=data.filter((e)=>{
+        return e.name.toLowerCase().includes(searchinp)|| e.age.toString().includes(searchinp)
+    })
 
+    pagination(filterData)
+
+}
+
+ let pagination=(data)=>{
+    $('#pagin').pagination({
+    dataSource: data,
+    pageSize: 5,
+    showGoInput: true,
+    showGoButton: true,
+    callback: function(data, pagination) {
+        DataShow(data)
+        
+    }
+})
+
+ }
+
+let DataShow=(data)=>{
 
 let show1=document.querySelector("#show")
+show1.innerHTML=""
 data.map((e)=>{
    show1.innerHTML+=
    `
